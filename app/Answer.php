@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Answer extends Model
 {
     //
     public function user()
@@ -12,8 +12,13 @@ class Question extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function question()
+    {
+        return $this->belongsTo('App\Question');
+    }
     public function answers()
     {
         return $this->hasMany('App\Answer');
     }
+
 }
